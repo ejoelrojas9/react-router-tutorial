@@ -1,4 +1,4 @@
-import {useNavigate, Routes, Route, Link} from 'react-router-dom'
+import {useNavigate, Outlet, Link} from 'react-router-dom'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -8,17 +8,19 @@ export default function Dashboard() {
   };
     return (
       <div> 
+        <Outlet/>
         <h1> Dashboard </h1>
         <button onClick={handleClick}>
           Logout
         </button>
+        <br/>
         <Link to='welcome'>
-          say welcome
+          Say welcome
         </Link>
-        <Routes>
-          <Route path='welcome' element={<p>Welcome!!!</p>} />
-        </Routes>
-
+        <br/>
+        <Link to='goodbye'>
+          Say goodbye
+        </Link>
       </div >
 
     )
